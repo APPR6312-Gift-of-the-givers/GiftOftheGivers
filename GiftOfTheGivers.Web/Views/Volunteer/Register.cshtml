@@ -1,0 +1,69 @@
+@model GiftOfTheGivers.Web.Models.Volunteer
+@{
+    ViewData["Title"] = "Volunteer";
+    var skillOptions = new[] { "Medical / Paramedic", "Search & Rescue", "Logistics / Supply Chain", "IT / Communications", "Construction / Engineering", "Social Work / Counselling", "Food Distribution", "Translation / Language", "Fundraising / Marketing", "Administration" };
+}
+
+<div class="form-page">
+    <div class="form-main">
+        <span class="eyebrow-small">JOIN OUR NETWORK</span>
+        <h2 style="margin-bottom:20px;">Register as a Volunteer</h2>
+
+        <div class="form-card">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div asp-validation-summary="All" class="validation-summary-errors"></div>
+            }
+            <form asp-controller="Volunteer" asp-action="Register" method="post">
+                <div class="form-group">
+                    <label asp-for="FullName"></label>
+                    <input asp-for="FullName" placeholder="Your name" />
+                    <span asp-validation-for="FullName" class="field-validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" placeholder="your@email.com" />
+                    <span asp-validation-for="Email" class="field-validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Skills &amp; Expertise (select all that apply)</label>
+                    <div class="chip-group">
+                        @foreach (var skill in skillOptions)
+                        {
+                            var id = "skill-" + skill.Replace(" ", "").Replace("/", "");
+                            <div class="chip">
+                                <input type="checkbox" name="skills" value="@skill" id="@id" />
+                                <label for="@id">@skill</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Availability"></label>
+                    <select asp-for="Availability">
+                        <option value="">Select your availability...</option>
+                        <option value="Weekdays">Weekdays</option>
+                        <option value="Weekends">Weekends</option>
+                        <option value="Evenings">Evenings</option>
+                        <option value="On-call / Emergency deployment">On-call / Emergency deployment</option>
+                        <option value="Full-time">Full-time</option>
+                    </select>
+                    <span asp-validation-for="Availability" class="field-validation-error"></span>
+                </div>
+                <button type="submit" class="btn btn-green btn-block">Register as Volunteer</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-side">
+        <div class="info-box">
+            <h4>Why Volunteer?</h4>
+            <ul>
+                <li>✓ Direct impact on life-or-death situations</li>
+                <li>✓ Certified training in disaster response</li>
+                <li>✓ Join a network of 8,000+ active volunteers</li>
+                <li>✓ Flexible commitment — local or deployable</li>
+            </ul>
+        </div>
+    </div>
+</div>

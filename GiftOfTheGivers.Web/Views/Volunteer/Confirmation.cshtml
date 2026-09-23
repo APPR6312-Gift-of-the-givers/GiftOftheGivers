@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Thank You";
+}
+<section class="section" style="text-align:center;">
+    <div class="certificate-box">
+        <h2>Thank you, @ViewData["Name"]! 🎉</h2>
+        <p>Your volunteer registration has been received. A coordinator will reach out with next steps and training details.</p>
+        <a class="btn btn-green" asp-controller="Home" asp-action="Index">Back to Home</a>
+    </div>
+</section>

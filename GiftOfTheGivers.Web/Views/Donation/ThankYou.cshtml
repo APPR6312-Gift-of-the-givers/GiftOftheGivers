@@ -1,0 +1,14 @@
+@model GiftOfTheGivers.Web.Models.Donation
+@{
+    ViewData["Title"] = "Thank You";
+}
+<section class="section" style="text-align:center;">
+    <div class="certificate-box">
+        <h2>Thank You, @Model.FullName! 💚</h2>
+        <p>Your @Model.DonationType.ToLower() donation of @Model.Currency @Model.Amount.ToString("N2") has been received.</p>
+        <p style="color:var(--muted);font-size:0.9rem;margin-bottom:4px;">Section 18A Tax Certificate</p>
+        <div class="certificate-number">@Model.CertificateNumber</div>
+        <p style="color:var(--muted);font-size:0.82rem;">A copy has been sent to @Model.Email (simulated for this prototype).</p>
+        <a class="btn btn-green" asp-controller="Home" asp-action="Index" style="margin-top:12px;">Back to Home</a>
+    </div>
+</section>

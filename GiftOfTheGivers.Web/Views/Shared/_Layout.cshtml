@@ -1,0 +1,129 @@
+@using Microsoft.AspNetCore.Identity
+@using GiftOfTheGivers.Web.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gift of the Givers</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" asp-controller="Home" asp-action="Index">
+                <img src="~/images/gotg_logo.png" asp-append-version="true" alt="Gift of the Givers logo" class="brand-logo"/>
+                <span class="brand-text">Gift of the Givers</span>
+            </a>
+            <nav class="nav-links">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-controller="Home" asp-action="About">About</a>
+                <a asp-controller="Donation" asp-action="Donate">Donate</a>
+                <a asp-controller="Volunteer" asp-action="Register">Volunteer</a>
+                <a asp-controller="Home" asp-action="Contact">Contact</a>
+            </nav>
+            <div class="nav-auth">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    var isEmployee = User.IsInRole("Employee");
+                    <span class="hi-user">Hi, @UserManager.GetUserName(User)</span>
+                    <a class="btn btn-outline-small" asp-controller="@(isEmployee ? "Employee" : "Donor")" asp-action="Index">Dashboard</a>
+                    <form asp-controller="Account" asp-action="Logout" method="post" class="inline-form">
+                        <button type="submit" class="btn btn-outline-small">Log out</button>
+                    </form>
+                }
+                else
+                {
+                    <a class="btn btn-gold" asp-controller="Account" asp-action="Login">Login / Register</a>
+                }
+            </div>
+        </div>
+    </header>
+
+    <main>
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert-success">@TempData["Message"]</div>
+        }
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <!-- About footer -->
+            <div class="footer-about">
+
+                <div class="footer-logo">
+
+                    <img src="~/images/gotg_logo.png" asp-append-version="true" alt="Gift of the Givers footer logo"/>
+                </div>
+
+                <p>
+                    Africa's largest humanitarian NGO, delivering
+                    emergency relief and sustainable development 
+                    since 1992.
+                </p>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook">F</a>
+
+                    <a href="#" aria-label="Twitter">T</a>
+                    <a href="#" aria-label="Instagram">I</a>
+                    <a href="#" aria-label="YouTube">Y</a>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-column">
+
+                <h3>NAVIGATE</h3>
+
+                <a asp-controller="Home" asp-action="Index">
+                    Home
+                </a>
+
+                <a asp-controller="Home" asp-action="About">
+                    About
+                </a>
+
+                <a  asp-controller="Donation" asp-action="Donate">
+                    Donate
+                </a>
+
+                <a  asp-controller="Volunteer" asp-action="Register">
+                    Volunteer
+                </a>
+
+                <a  asp-controller="Home" asp-action="Contact">
+                    Contact
+                </a>
+
+            </div>
+
+            <!-- LEGAL -->
+            <div class="footer-column">
+
+                <h3>LEGAL</h3>
+
+                <span>NGO No. 034-773</span>
+                <span>PBO No. 130 003 855</span>
+                <span>Section 18A Approved</span>
+
+                <a href="#">Privacy Policy</a>
+
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+
+
+        <p>&copy; @DateTime.Now.Year Gift of the Givers Foundation — Prototype built for academic assessment (APPR6312 POE).</p>
+    </footer>
+
+    <script src="~/js/site.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

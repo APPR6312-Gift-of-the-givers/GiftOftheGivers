@@ -1,0 +1,160 @@
+@{
+    ViewData["Title"] = "About";
+}
+<section class="about-section">
+    <div class="about-intro-content">
+        <h2 class="about-section-title">About This Prototype</h2>
+        <p class="about-section-sub">Built for APPR6312 POE Part 1 — a proof-of-concept, not the final system.</p>
+        <div class="form-card" style="max-width:800px;margin:0 auto;">
+            <p>The Gift of the Givers Foundation is the largest disaster response non-governmental organisation of African origin on the continent. 
+                This site is a Version 1 prototype built with ASP.NET Core to prove out the core ideas: volunteer registration, donations, 
+                employee updates, and secure role-based login — before the full system is built.
+            </p>
+
+            <p>Data for this prototype is stored in-memory (as permitted by the POE brief), so it resets each time the application restarts. 
+                In a production system this would move to Azure SQL Database, hosted on Azure App Services.
+            </p>
+        </div>
+    </div>
+
+    <div class="about-image">
+        <img src="~/images/about_image.jpg" asp-append-version="true" alt="Gift of the Givers team assisting a mom"/>
+    </div>
+
+</section>
+
+<!-- ABOUT the gift of the givers -->
+<section class="about-highlights">
+
+    <div class="about-highlight-card">
+
+        <div class="highlight-icon">
+            🌍
+        </div>
+
+        <h3>Global Reach</h3>
+
+        <p>
+            Active operations in 60+ different countries across Africa, the Middle East, Asia, and Europe.
+        </p>
+
+    </div>
+
+    <div class="about-highlight-card">
+
+        <div class="highlight-icon">
+            ⚡
+        </div>
+
+        <h3>Rapid Response</h3>
+
+        <p>
+            Within 24-72 hours of a disaster, our teams are mobilised with supplies and medical personnel.
+        </p>
+    </div>
+
+    <div class="about-highlight-card">
+
+        <div class="highlight-icon">
+            🔍
+        </div>
+
+        <h3>Transparency</h3>
+
+        <p>
+            Every donation is accounted for. We publish annual reports and welcome third party audits.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- LATEST FIELD UPDATES -->
+<section class="field-updates">
+
+    <h2>Latest Field Updates</h2>
+
+    <!-- FIRST UPDATE -->
+    <div class="field-update">
+
+        <div class="update-line"></div>
+
+        <div class="update-content">
+
+            <div class="update-meta">
+
+                <span class="update-category">
+                    GAZA MEDICAL AID
+                </span>
+
+                <span class="update-date">2026-08-12</span>
+
+                <span class="update-author">
+                    by Imitiaz Sooliman
+                </span>
+            </div>
+
+            <p>
+                Third consignment of surgical supplies cleared in Cairo en route to Rafah. 4,200 trauma kits included.
+            </p>
+        </div>
+    </div>
+
+    <!-- SECOND UPDATE -->
+    <div class="field-update">
+
+        <div class="update-line"></div>
+
+        <div class="update-content">
+
+            <div class="update-meta">
+
+                <span class="update-category">
+                    EASTERN CAPE FLOODS RELIEF
+                </span>
+
+                <span class="update-date">2026-08-10</span>
+
+                <span class="update-author">
+                    by Thandi Nkosi
+                </span>
+            </div>
+
+            <p>
+                Day 18: 1,850 food parcels distributed in Butterworth. Mobile clinic sees 312 patients. Water tanks are functioning.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- THIRD UPDATE -->
+    <div class="field-update">
+
+        <div class="update-line"></div>
+
+        <div class="update-content">
+
+            <div class="update-meta">
+
+                <span class="update-category">
+                    KZN DROUGHT RESPONSE
+                </span>
+
+                <span class="update-date">2026-08-08</span>
+
+                <span class="update-author">
+                    by Ahmed Patel
+                </span>
+
+            </div>
+
+            <p>
+                Six boreholes commissioned in Msinga district. Water yield confirmed at 4,200 L/hour. Community training underway.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>

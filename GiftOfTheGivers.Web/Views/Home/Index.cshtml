@@ -1,0 +1,64 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <span class="eyebrow">SOUTH AFRICA'S LEADING HUMANITARIAN ORGANISATION</span>
+            <h1>Giving where it matters <span class="accent">most.</span></h1>
+            <p>For over 30 years, Gift of the Givers has delivered emergency relief and sustainable development to millions across Africa and beyond. This prototype demonstrates how volunteers, donors, and field staff will one day connect through one platform.</p>
+            <div class="hero-actions">
+                <a class="btn btn-gold" asp-controller="Donation" asp-action="Donate">Donate Now</a>
+                <a class="btn btn-outline" asp-controller="Volunteer" asp-action="Register">Volunteer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="platform-section">
+    <h2 class="platform-section-title">How the platform helps</h2>
+    <p class="section-sub">A working prototype of the core features Gift of the Givers needs during a disaster response.</p>
+    <div class="platform-card-grid">
+        <div class="platform-card">
+            <h3>🧍 Volunteer Management</h3>
+            <p>Volunteers register their skills and availability so field teams can deploy them quickly.</p>
+        </div>
+        <div class="platform-card">
+            <h3>💝 Donations</h3>
+            <p>Donors give once or monthly and receive an auto-generated tax certificate immediately.</p>
+        </div>
+        <div class="platform-card">
+            <h3>📋 Project Tracking</h3>
+            <p>Employees post live field updates so donors and volunteers can see real impact.</p>
+        </div>
+        <div class="platform-card">
+            <h3>🔒 Secure Login</h3>
+            <p>Role-based accounts for employees and donors, built on ASP.NET Core Identity.</p>
+        </div>
+    </div>
+</section>
+
+<!-- call to action -->
+<section class="cta-section">
+
+    <div class="cta-content">
+
+        <h2>Ready to make a difference?</h2>
+
+        <p>
+            Your contribution - no matter the size – changes lives.
+            Join thousands of givers who make our work possible.
+        </p>
+
+        <div class="cta-actions">
+            <a class="btn btn-green" asp-controller="Donation" asp-action="Donate">
+                Make a Donation
+            </a>
+
+            <a class="btn btn-gold" asp-controller="Volunteer" asp-action="Register">
+                Register as Volunteer
+            </a>
+        </div>
+    </div>
+</section>

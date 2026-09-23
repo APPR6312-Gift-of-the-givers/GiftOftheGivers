@@ -1,0 +1,101 @@
+@model GiftOfTheGivers.Web.Models.Donation
+@{
+    ViewData["Title"] = "Donate";
+}
+
+<div class="form-page">
+    <div class="form-main">
+        <span class="eyebrow-small">SUPPORT OUR WORK</span>
+        <h2 style="margin-bottom:20px;">Make a Donation</h2>
+
+        <div class="form-card">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div asp-validation-summary="All" class="validation-summary-errors"></div>
+            }
+            <form asp-controller="Donation" asp-action="Donate" method="post">
+                <div class="form-group">
+                    <label>Donation Type</label>
+                    <div class="toggle-group">
+                        <input type="radio" id="type-onetime" name="DonationType" value="One-Time" checked />
+                        <label for="type-onetime">One-Time Gift</label>
+                        <input type="radio" id="type-recurring" name="DonationType" value="Recurring" />
+                        <label for="type-recurring">Monthly Giving</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Currency</label>
+                    <div class="toggle-group">
+                        <input type="radio" id="cur-zar" name="Currency" value="ZAR" checked />
+                        <label for="cur-zar">ZAR</label>
+                        <input type="radio" id="cur-usd" name="Currency" value="USD" />
+                        <label for="cur-usd">USD</label>
+                        <input type="radio" id="cur-eur" name="Currency" value="EUR" />
+                        <label for="cur-eur">EUR</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Amount</label>
+                    <div class="amount-group">
+                        <button type="button" class="btn btn-outline-amount preset-amount" data-amount="100">R100</button>
+                        <button type="button" class="btn btn-outline-amount preset-amount" data-amount="250">R250</button>
+                        <button type="button" class="btn btn-outline-amount preset-amount" data-amount="500">R500</button>
+                        <button type="button" class="btn btn-outline-amount preset-amount" data-amount="1000">R1000</button>
+                        <button type="button" class="btn btn-outline-amount preset-amount" data-amount="2500">R2500</button>
+                    </div>
+                    <input asp-for="Amount" id="Amount" type="number" step="0.01" placeholder="Other amount" />
+                    <span asp-validation-for="Amount" class="field-validation-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FullName"></label>
+                    <input asp-for="FullName" placeholder="Your full name" />
+                    <span asp-validation-for="FullName" class="field-validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" placeholder="your@email.com" />
+                    <span asp-validation-for="Email" class="field-validation-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-green btn-block">Donate Now</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-side">
+        <div class="info-box">
+            <h4>Your Impact</h4>
+            <ul>
+                <li>
+                    <strong>R100 / $6</strong> — Provides clean water for a family for one week
+                    </li>
+
+                <li>
+                    <strong>R250 / $14</strong> — Supplies an emergency food parcel for 5 people
+                </li>
+
+                <li>
+                    <strong>R500 / $28</strong> — Covers basic medicines for a mobile clinic day
+                </li>
+
+                <li>
+                    <strong>R1,000 / $55</strong> — Funds trauma counselling for 10 survivors
+                </li>
+
+            </ul>
+        </div>
+        <div class="info-box tax-box">
+            <h4>Tax Deductible</h4>
+            <p>All donations to Gift of the Givers qualify for a Section 18A tax deduction. A certificate will be auto-generated for your records.</p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <style>
+        .btn-outline-amount { background: #fff; border: 1px solid var(--border); color: var(--text); padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+    </style>
+}

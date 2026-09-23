@@ -1,0 +1,66 @@
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="auth-wrap">
+    <span class="brand-mark" style="display:inline-block;">GG</span>
+    <h2 style="margin-top:12px;">Welcome Back</h2>
+    <p style="color:var(--muted);">Sign in to access your account</p>
+
+    <div class="auth-card">
+        <div class="auth-tabs">
+            <button type="button" class="auth-tab-btn active" data-target="panel-signin">Sign In</button>
+            <button type="button" class="auth-tab-btn" data-target="panel-register">Register</button>
+        </div>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="validation-summary-errors">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+
+        <div id="panel-signin" class="auth-panel">
+            <form asp-controller="Account" asp-action="Login" method="post">
+                <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="your@email.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="••••••••" required />
+                </div>
+                <p class="demo-hint">Demo: employee@gotg.org / Employee123! or donor@gotg.org / Donor123!</p>
+                <button type="submit" class="btn btn-green btn-block">Sign In</button>
+            </form>
+        </div>
+
+        <div id="panel-register" class="auth-panel" style="display:none;">
+            <form asp-controller="Account" asp-action="Register" method="post">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullName" placeholder="Your name" required />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="your@email.com" required />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="At least 6 characters" required minlength="6" />
+                </div>
+                <p class="demo-hint">New donor accounts are created instantly for this prototype.</p>
+                <button type="submit" class="btn btn-green btn-block">Register as Donor</button>
+            </form>
+        </div>
+    </div>
+
+    <p class="auth-switch-link">
+        <a asp-controller="Donation" asp-action="Donate">Donate as a guest instead</a>
+    </p>
+</div>

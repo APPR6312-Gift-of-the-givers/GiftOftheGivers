@@ -1,0 +1,34 @@
+@model GiftOfTheGivers.Web.Models.FieldUpdate
+@using GiftOfTheGivers.Web.Models
+@{
+    ViewData["Title"] = "Post Update";
+    var projects = ViewData["Projects"] as List<ReliefProject> ?? new();
+}
+
+<div class="dashboard-wrap" style="max-width:640px;">
+    <h2>Post a Field Update</h2>
+    <div class="form-card">
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div asp-validation-summary="All" class="validation-summary-errors"></div>
+        }
+        <form asp-controller="Employee" asp-action="PostUpdate" method="post">
+            <div class="form-group">
+                <label>Project</label>
+                <select name="ReliefProjectId" required>
+                    <option value="">Select a project...</option>
+                    @foreach (var p in projects)
+                    {
+                        <option value="@p.Id">@p.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Message"></label>
+                <textarea asp-for="Message" rows="4" placeholder="What's happening on the ground?"></textarea>
+                <span asp-validation-for="Message" class="field-validation-error"></span>
+            </div>
+            <button type="submit" class="btn btn-green btn-block">Post Update</button>
+        </form>
+    </div>
+</div>

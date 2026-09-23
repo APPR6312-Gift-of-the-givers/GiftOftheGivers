@@ -1,0 +1,103 @@
+@model List<GiftOfTheGivers.Web.Models.FieldUpdate>
+@using GiftOfTheGivers.Web.Models
+@{
+    ViewData["Title"] = "Employee Dashboard";
+    var recentVolunteers = ViewData["RecentVolunteers"] as List<Volunteer> ?? new();
+    var recentDonations = ViewData["RecentDonations"] as List<Donation> ?? new();
+}
+
+<div class="dashboard-wrap">
+    <span class="dashboard-eyebrow">EMPLOYEE PORTAL</span>
+    <div class="dashboard-header-row">
+        <h2 style="margin:0;">Welcome, @User.Identity!.Name</h2>
+        <a class="btn btn-green" asp-controller="Employee" asp-action="PostUpdate">+ Post Update</a>
+    </div>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="stat-value">@ViewData["ActiveProjects"]</div>
+            <div class="stat-label">Active Projects</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">@ViewData["UpdatesPosted"]</div>
+            <div class="stat-label">Updates Posted</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">@ViewData["VolunteersRegistered"]</div>
+            <div class="stat-label">Volunteers Registered</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">R @(((decimal)ViewData["DonationsThisMonth"]!).ToString("N0"))</div>
+            <div class="stat-label">Donations This Month</div>
+        </div>
+    </div>
+
+    <h3>Field Updates (@Model.Count)</h3>
+    <div class="form-card">
+        @if (!Model.Any())
+        {
+            <div class="empty-state">No field updates yet. Click "Post Update" to add one.</div>
+        }
+        else
+        {
+            foreach (var update in Model)
+            {
+                <div class="update-item">
+                    <span class="update-tag">@update.ProjectName</span>
+                    <span class="update-meta">@update.PostedAt.ToString("yyyy-MM-dd") · @update.PostedBy</span>
+                    <p style="margin:8px 0 0;">@update.Message</p>
+                </div>
+            }
+        }
+    </div>
+
+    <h3 style="margin-top:32px;">Recent Volunteers</h3>
+    <div class="form-card">
+        @if (!recentVolunteers.Any())
+        {
+            <div class="empty-state">No volunteers registered yet.</div>
+        }
+        else
+        {
+            <table class="simple-table">
+                <thead><tr><th>Name</th><th>Email</th><th>Availability</th><th>Registered</th></tr></thead>
+                <tbody>
+                @foreach (var v in recentVolunteers)
+                {
+                    <tr>
+                        <td>@v.FullName</td>
+                        <td>@v.Email</td>
+                        <td>@v.Availability</td>
+                        <td>@v.RegisteredAt.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </div>
+
+    <h3 style="margin-top:32px;">Recent Donations</h3>
+    <div class="form-card">
+        @if (!recentDonations.Any())
+        {
+            <div class="empty-state">No donations yet.</div>
+        }
+        else
+        {
+            <table class="simple-table">
+                <thead><tr><th>Donor</th><th>Amount</th><th>Type</th><th>Date</th></tr></thead>
+                <tbody>
+                @foreach (var d in recentDonations)
+                {
+                    <tr>
+                        <td>@d.FullName</td>
+                        <td>@d.Currency @d.Amount.ToString("N2")</td>
+                        <td>@d.DonationType</td>
+                        <td>@d.DonatedAt.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

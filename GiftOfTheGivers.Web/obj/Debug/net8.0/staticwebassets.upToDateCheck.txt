@@ -1,0 +1,6 @@
+wwwroot\css\StyleSheet.css
+wwwroot\images\about_image.jpg
+wwwroot\images\gotg_logo.png
+wwwroot\js\site.js
+wwwroot\css\site.css
+wwwroot\images\Contact.jpg
