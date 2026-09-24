@@ -1,5 +1,6 @@
 using GiftOfTheGivers.Web.Data;
 using GiftOfTheGivers.Web.Models;
+using GiftOfTheGivers.Web.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +32,10 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Account/AccessDenied";
 });
 
+
+
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<TaxCertificateService>();
 
 var app = builder.Build();
 
