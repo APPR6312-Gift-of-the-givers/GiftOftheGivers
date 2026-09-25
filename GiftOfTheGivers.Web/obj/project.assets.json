@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "GiftOfTheGivers.Helpers/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/GiftOfTheGivers.Helpers.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/GiftOfTheGivers.Helpers.dll": {}
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1010,6 +1019,17 @@
     }
   },
   "libraries": {
+    "GiftOfTheGivers.Helpers/1.0.0": {
+      "sha512": "+GFk/96ePrJoiH+htNQcppsgd2CSJjUCzPOUdwiOKSe4GkXr954svB7IptE0OmcpML1FScTrpxQSz6xsGY2uog==",
+      "type": "package",
+      "path": "giftofthegivers.helpers/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "giftofthegivers.helpers.1.0.0.nupkg.sha512",
+        "giftofthegivers.helpers.nuspec",
+        "lib/net8.0/GiftOfTheGivers.Helpers.dll"
+      ]
+    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -2663,6 +2683,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "GiftOfTheGivers.Helpers >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.8",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.8",
       "Microsoft.EntityFrameworkCore.InMemory >= 8.0.8",
@@ -2676,16 +2697,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
       "projectName": "GiftOfTheGivers.Web",
-      "projectPath": "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
+      "projectPath": "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
       "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\obj\\",
+      "outputPath": "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+        "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\NuGet.Config",
         "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -2694,8 +2716,7 @@
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://pkgs.dev.azure.com/ST10448479/GiftOfTheGivers/_packaging/GiftOfTheGiversFeed/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -2719,6 +2740,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "GiftOfTheGivers.Helpers": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.8, )"

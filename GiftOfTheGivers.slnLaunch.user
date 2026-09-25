@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\Gift of the Givers\\GiftOfTheGivers-master\\GenerateCertificate\\GenerateDonationCertificate.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

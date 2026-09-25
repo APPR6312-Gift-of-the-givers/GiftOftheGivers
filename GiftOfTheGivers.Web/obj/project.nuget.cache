@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lY94hf6IgyY=",
+  "dgSpecHash": "vZDZBtx4CTA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
+  "projectFilePath": "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Student\\.nuget\\packages\\giftofthegivers.helpers\\1.0.0\\giftofthegivers.helpers.1.0.0.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.8\\microsoft.aspnetcore.cryptography.internal.8.0.8.nupkg.sha512",
     "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.8\\microsoft.aspnetcore.cryptography.keyderivation.8.0.8.nupkg.sha512",
