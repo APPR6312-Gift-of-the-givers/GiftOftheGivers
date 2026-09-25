@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>GiftOfTheGivers.Helpers</id>
+    <version>1.0.0</version>
+    <authors>Gift of the Givers Dev Team</authors>
+    <description>This is a Helper library for the donation feature of the Gift of the Givers website.</description>
+    <repository type="git" commit="23156f7b5ddd4a24f065cb67e85568eae7cdba17" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Student\source\repos\Gift of the Givers\GiftOfTheGivers-master\GiftOfTheGivers.Helpers\bin\Debug\net8.0\GiftOfTheGivers.Helpers.dll" target="lib\net8.0\GiftOfTheGivers.Helpers.dll" />
+  </files>
+</package>

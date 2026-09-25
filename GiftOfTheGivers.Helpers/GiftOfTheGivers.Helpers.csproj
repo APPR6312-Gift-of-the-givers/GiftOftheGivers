@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <PackageId>GiftOfTheGivers.Helpers</PackageId>
+	  <Version>1.0.0</Version>
+	  <Authors>Gift of the Givers Dev Team</Authors>
+	  <Description>This is a Helper library for the donation feature of the Gift of the Givers website.</Description>
+	  
+  </PropertyGroup>
+
+</Project>

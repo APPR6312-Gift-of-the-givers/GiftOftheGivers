@@ -1,22 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj": {}
+    "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj": {
+    "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
         "projectName": "GiftOfTheGivers.Web",
-        "projectPath": "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
+        "projectPath": "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\GiftOfTheGivers.Web.csproj",
         "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Student\\GiftOfTheGivers\\GiftOfTheGivers\\GiftOfTheGivers-master\\GiftOfTheGivers.Web\\obj\\",
+        "outputPath": "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\GiftOfTheGivers.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+          "C:\\Users\\Student\\Source\\Repos\\GiftOfTheGivers\\NuGet.Config",
           "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -25,8 +26,7 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://pkgs.dev.azure.com/ST10448479/GiftOfTheGivers/_packaging/GiftOfTheGiversFeed/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "GiftOfTheGivers.Helpers": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
