@@ -30,6 +30,8 @@ steps:
   inputs:
     command: 'restore'
     projects: '$(solution)'
+    feedsToUse: 'config'
+    nugetConfigPath: 'nuget.config'
 
 # 4. Build the solution
 - task: DotNetCoreCLI@2
@@ -38,4 +40,3 @@ steps:
     command: 'build'
     projects: '$(solution)'
     arguments: '--configuration $(buildConfiguration) --no-restore'
-    
