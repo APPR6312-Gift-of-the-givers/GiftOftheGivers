@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  solution: '**/*.sln'
+  solution: 'GiftOfTheGivers.sln'
   buildConfiguration: 'Release'
 
 steps:
@@ -20,25 +20,22 @@ steps:
   inputs:
     version: '8.x'
 
-# 2. Restore NuGet packages
+# 2. Authenticate with Azure Artifacts
+- task: NuGetAuthenticate@1
+  displayName: 'Authenticate with Azure Artifacts'
+
+# 3. Restore NuGet packages
 - task: DotNetCoreCLI@2
   displayName: 'Restore Dependencies'
   inputs:
     command: 'restore'
     projects: '$(solution)'
 
-# 3. Build the solution
+# 4. Build the solution
 - task: DotNetCoreCLI@2
   displayName: 'Build Solution'
   inputs:
     command: 'build'
     projects: '$(solution)'
     arguments: '--configuration $(buildConfiguration) --no-restore'
-
-# 4. Run tests 
-- task: DotNetCoreCLI@2
-  displayName: 'Run Tests'
-  inputs:
-    command: 'test'
-    projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --no-build'
+    

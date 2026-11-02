@@ -4,14 +4,14 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftOfTheGivers.Web", "GiftOfTheGivers.Web\GiftOfTheGivers.Web.csproj", "{A1B2C3D4-E5F6-4A5B-8C9D-1E2F3A4B5C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftOfTheGivers.Helpers", "..\Gift of the Givers\GiftOfTheGivers-master\GiftOfTheGivers.Helpers\GiftOfTheGivers.Helpers.csproj", "{1D98F799-0D40-EF22-8453-7AAB22E40133}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiftOfTheGivers.Helpers", "GiftOfTheGivers.Helpers\GiftOfTheGivers.Helpers.csproj", "{1D98F799-0D40-EF22-8453-7AAB22E40133}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
 	ProjectSection(SolutionItems) = preProject
 		nuget.config = nuget.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDonationCertificate", "..\Gift of the Givers\GiftOfTheGivers-master\GenerateCertificate\GenerateDonationCertificate.csproj", "{AA177894-1C29-6BD8-119A-E34E3622C460}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateDonationCertificate", "GenerateCertificate\GenerateDonationCertificate.csproj", "{AA177894-1C29-6BD8-119A-E34E3622C460}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
